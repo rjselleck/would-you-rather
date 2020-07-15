@@ -20,7 +20,7 @@ class App extends Component {
       <Router>
         <LoadingBar />
         <div>
-          <h1>Would You Rather</h1>
+
           {this.props.loading === true
             ? null
             : <div>

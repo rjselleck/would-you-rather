@@ -8,11 +8,36 @@ class Navbar extends Component {
     const { authedUser } = this.props
 
     return (
-      <div>
-        <p>Home | New Question | Leader Board </p>
-        <p>Hello {authedUser} | Logout</p>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <span className="navbar-brand">Would You Rather...</span>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-      </div>
+        <div className="collapse navbar-collapse" id="navbarColor01">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <span className="nav-link">Home</span>
+            </li>
+            <li className="nav-item">
+              <span className="nav-link">New Question</span>
+            </li>
+            <li className="nav-item">
+              <span className="nav-link">Leader Board</span>
+            </li>
+          </ul>
+          <span className="navbar-text">
+            Hello {authedUser}
+          </span>
+          <span className="navbar-text pl-md-3 pl-0">
+            Logout
+          </span>
+        </div>
+      </nav>
+      // <div>
+      //   <p>Home | New Question | Leader Board </p>
+      //   <p>Hello {authedUser} | Logout</p>
+      // </div>
     )
   };
 };

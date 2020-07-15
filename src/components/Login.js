@@ -47,19 +47,25 @@ class Login extends Component {
 
     return (
       <div>
-        <hr></hr>
-        <h3>LOGIN NOW</h3>
-        {errorMsg && (
-          <div>{errorMsg}</div>
-        )}
+        <h1 className="text-center">Would You Rather</h1>
         <form id="login-form" onSubmit={this.handleSubmit}>
-          <select id="user-select" onChange={(e) => this.handleChangeSelect(e)}>
-            <option value="">Please Choose</option>
-            {userIds.map((id) =>
-              <option key={id} value={id}>{id}</option>
-            )}
-          </select>
-          <button id="login-button" type="submit">Login</button>
+          <div className="text-center">
+            {errorMsg
+              ? <h4 className="my-5 text-danger">{errorMsg}</h4>
+              : <h4 className="my-5">Choose Your Player</h4>
+            }
+          </div>
+          <div className="form-group">
+            <select id="user-select" className="custom-select" onChange={(e) => this.handleChangeSelect(e)}>
+              <option value="">Please Choose</option>
+              {userIds.map((id) =>
+                <option key={id} value={id}>{id}</option>
+              )}
+            </select>
+            <div className="my-3">
+              <button id="login-button" type="submit" className="btn btn-primary btn-block">Login</button>
+            </div>
+          </div>
         </form>
       </div>
     )

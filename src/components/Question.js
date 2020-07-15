@@ -7,14 +7,23 @@ class Question extends Component {
     // console.log(this.props)
     const { question } = this.props
 
-    const { name, timestamp, optionOne, optionTwo, voteOne, voteTwo } = question
+    const { name, timestamp, avatar, optionOne, optionTwo, voteOne, voteTwo } = question
 
     return (
-      <div>
-        <p>Author: {name}</p>
-        <p>Date: {formatDate(timestamp)}</p>
-        <p>Option 1: {optionOne} - {voteOne} votes</p>
-        <p>Option 2: {optionTwo} - {voteTwo} votes</p>
+      <div className="card-container">
+        <div className="card border-light">
+          <div className="card-header">{name} asks:</div>
+          <div className="card-body">
+            <div className="card-body-left">
+              <img src={avatar} />
+            </div>
+            <div className="card-body-right">
+              <h4>Would you rather</h4>
+              <p>{optionOne}...</p>
+              <button>View Poll</button>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
