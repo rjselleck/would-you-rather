@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 class Navbar extends Component {
   render() {
@@ -17,27 +17,34 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <span className="nav-link">Home</span>
+              {/* <span className="nav-link">Home</span> */}
+              <NavLink to='/' exact activeClassName='active' className="nav-link">
+                Home
+              </NavLink>
             </li>
             <li className="nav-item">
-              <span className="nav-link">New Question</span>
+              {/* <span className="nav-link">New Question</span> */}
+              <NavLink to='/new' exact activeClassName='active' className="nav-link">
+                New Question
+              </NavLink>
             </li>
             <li className="nav-item">
-              <span className="nav-link">Leader Board</span>
+              {/* <span className="nav-link">Leader Board</span> */}
+              <NavLink to='/leader-board' exact activeClassName='active' className="nav-link">
+                Leader Board
+              </NavLink>
             </li>
           </ul>
-          <span className="navbar-text">
-            Hello {authedUser}
-          </span>
-          <span className="navbar-text pl-md-3 pl-0">
-            Logout
-          </span>
+          <div className="navbar-text">
+            <span className="navbar-text-right">
+              Hello {authedUser}
+            </span>
+            <span className="navbar-text-right pl-lg-3 pl-0 mt-3 mt-lg-0">
+              Logout
+            </span>
+          </div>
         </div>
       </nav>
-      // <div>
-      //   <p>Home | New Question | Leader Board </p>
-      //   <p>Hello {authedUser} | Logout</p>
-      // </div>
     )
   };
 };

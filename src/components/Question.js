@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { formatQuestion, formatDate } from '../utils/helpers'
+import { formatQuestion } from '../utils/helpers'
+import { Link } from 'react-router-dom'
 
 class Question extends Component {
   render() {
-    // console.log(this.props)
-    const { question } = this.props
+    const { question, id } = this.props
 
-    const { name, timestamp, avatar, optionOne, optionTwo, voteOne, voteTwo } = question
+    const { name, avatar, optionOne } = question
 
     return (
       <div className="card-container">
@@ -15,12 +15,16 @@ class Question extends Component {
           <div className="card-header">{name} asks:</div>
           <div className="card-body">
             <div className="card-body-left">
-              <img src={avatar} />
+              <img src={avatar} alt={`Avatar of ${name}`} />
             </div>
             <div className="card-body-right">
               <h4>Would you rather</h4>
               <p>{optionOne}...</p>
-              <button>View Poll</button>
+              <p>ID: {id}</p>
+              <Link to={`/questions/${id}`}>
+                <button>View Poll</button>
+              </Link>
+
             </div>
           </div>
         </div>
@@ -34,8 +38,8 @@ function mapStateToProps({ authedUser, users, questions }, { id }) {
 
   return {
     authedUser,
-    question: formatQuestion(question, users[question.author], authedUser),
-
+    question: formatQuestion(question, users[question.author]),
+    id,
   }
 }
 

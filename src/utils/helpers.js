@@ -20,3 +20,7 @@ export function formatQuestion(question, user) {
     voteTwo: optionTwo.votes.length,
   }
 }
+
+export function formatPercentage(x) {
+  return Number.parseFloat(x).toFixed(2);
+}

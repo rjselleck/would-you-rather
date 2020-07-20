@@ -2,11 +2,15 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
 // import PropTypes from 'prop-types'
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
 import Login from './Login'
 import Navbar from './Navbar'
+import QuestionNew from './QuestionNew'
+import QuestionSwitch from './QuestionSwitch'
+
+import LeaderBoard from './LeaderBoard'
 
 class App extends Component {
   componentDidMount() {
@@ -27,7 +31,11 @@ class App extends Component {
               {authedUser ?
                 <Fragment>
                   <Navbar />
-                  <Dashboard />
+                  {/* <Dashboard /> */}
+                  <Route path='/' exact component={Dashboard} />
+                  <Route path='/questions/:id' component={QuestionSwitch} />
+                  <Route path='/new' exact component={QuestionNew} />
+                  <Route path='/leader-board' exact component={LeaderBoard} />
                 </Fragment>
                 :
                 <Login />

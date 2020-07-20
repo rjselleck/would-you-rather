@@ -5,7 +5,7 @@ import Question from './Question'
 class Dashboard extends Component {
 
   state = {
-    toggle: 'answered',
+    toggle: 'unanswered',
   }
 
   handleToggle = (e) => {
@@ -19,45 +19,31 @@ class Dashboard extends Component {
 
   render() {
 
-    const { answeredIds, unansweredIds } = this.props;
-    console.log('Aanswered: ', answeredIds)
-    console.log('Unanswered: ', unansweredIds)
+    const { answeredQuestions, unansweredQuestions } = this.props;
 
     const { toggle } = this.state
 
     return (
       <div className="container my-5">
         <div className="button-container">
-          <button value="answered" onClick={this.handleToggle}>Answered</button>
           <button value="unanswered" onClick={this.handleToggle} >Unanswered</button>
+          <button value="answered" onClick={this.handleToggle}>Answered</button>
+
         </div>
         <div>
           {toggle === 'answered'
-            ? answeredIds.map((id) => (
+            ? answeredQuestions.map((id) => (
               <div key={id}>
-                {/* {console.log(id)} */}
                 <Question id={id} />
               </div>
             ))
-            : unansweredIds.map((id) => (
+            : unansweredQuestions.map((id) => (
               <div key={id}>
-                {/* {console.log(id)} */}
                 <Question id={id} />
               </div>
             ))
           }
         </div>
-
-        {/* <div className="card-container">
-          <div className="card border-light mb-3">
-            <div className="card-header">Header</div>
-            <div className="card-body">
-              <h4 className="card-title">Light card title</h4>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div> */}
-
       </div>
 
     )
@@ -68,13 +54,19 @@ class Dashboard extends Component {
 
 function mapStateToProps({ questions, authedUser, users }) {
   const answeredIds = Object.keys(users[authedUser].answers)
-  const unansweredIds = Object.keys(questions)
+
+  const answeredQuestions = Object.keys(questions)
+    .filter(question => answeredIds.includes(question))
+    .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+
+  const unansweredQuestions = Object.keys(questions)
     .filter(question => !answeredIds.includes(question))
-    .sort((a, b) => b.timestamp - a.timestamp)
+    .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
 
   return {
     answeredIds,
-    unansweredIds,
+    answeredQuestions,
+    unansweredQuestions
   }
 }
 
