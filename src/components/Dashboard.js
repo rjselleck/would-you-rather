@@ -20,7 +20,6 @@ class Dashboard extends Component {
   render() {
 
     const { answeredQuestions, unansweredQuestions } = this.props;
-
     const { toggle } = this.state
 
     return (
@@ -28,7 +27,6 @@ class Dashboard extends Component {
         <div className="button-container">
           <button value="unanswered" onClick={this.handleToggle} >Unanswered</button>
           <button value="answered" onClick={this.handleToggle}>Answered</button>
-
         </div>
         <div>
           {toggle === 'answered'
@@ -45,7 +43,6 @@ class Dashboard extends Component {
           }
         </div>
       </div>
-
     )
   }
 }

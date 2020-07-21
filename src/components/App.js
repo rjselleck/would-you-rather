@@ -9,7 +9,6 @@ import Login from './Login'
 import Navbar from './Navbar'
 import QuestionNew from './QuestionNew'
 import QuestionSwitch from './QuestionSwitch'
-
 import LeaderBoard from './LeaderBoard'
 
 class App extends Component {
@@ -24,7 +23,6 @@ class App extends Component {
       <Router>
         <LoadingBar />
         <div>
-
           {this.props.loading === true
             ? null
             : <div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
 // import PropTypes from 'prop-types'
 
@@ -9,6 +10,7 @@ class Login extends Component {
   state = {
     selectedUser: '',
     errorMsg: null,
+    toDashboard: false,
   }
 
   handleChangeSelect = (e) => {
@@ -36,17 +38,21 @@ class Login extends Component {
     dispatch(setAuthedUser(selectedUser))
 
     this.setState(() => ({
-      selectedUser: ''
+      selectedUser: '',
+      toDashboard: true,
     }))
   }
 
-
   render() {
     const { userIds } = this.props
-    const { errorMsg } = this.state
+    const { errorMsg, toDashboard } = this.state
+
+    if (toDashboard === true) {
+      return <Redirect to={`/`} />
+    }
 
     return (
-      <div>
+      <div className="container my-5">
         <h1 className="text-center">Would You Rather</h1>
         <form id="login-form" onSubmit={this.handleSubmit}>
           <div className="text-center">

@@ -8,9 +8,7 @@ export function receiveQuestions(questions) {
   }
 }
 
-
-export function handleAnswerQuestion(qid, answer, authedUser) {
-
+export function saveQuestionAnswer(qid, answer, authedUser) {
   return {
     type: ANSWER_QUESTION,
     answer,

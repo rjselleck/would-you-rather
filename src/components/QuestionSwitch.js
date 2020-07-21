@@ -7,25 +7,20 @@ class QuestionSwitch extends Component {
   render() {
     const { id, answered } = this.props
     return (
-      <div className="container my-5">
+
+      <div>
         {answered === true ?
-          // <p>Show Results...</p>
           <QuestionResults id={id} />
           :
-          // <p>Ask Question...</p>
           <QuestionAsk id={id} />}
       </div>
     )
   }
 }
 
-
-
-// mapStateToProps({state},{props})
-function mapStateToProps({ authedUser, users, questions }, props) {
+function mapStateToProps({ authedUser, users }, props) {
   const { id } = props.match.params
   const answered = Object.keys(users[authedUser].answers).includes(id)
-
 
   return {
     id,

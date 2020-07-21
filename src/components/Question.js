@@ -20,11 +20,9 @@ class Question extends Component {
             <div className="card-body-right">
               <h4>Would you rather</h4>
               <p>{optionOne}...</p>
-              <p>ID: {id}</p>
               <Link to={`/questions/${id}`}>
                 <button>View Poll</button>
               </Link>
-
             </div>
           </div>
         </div>
