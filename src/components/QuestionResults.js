@@ -14,13 +14,13 @@ class QuestionResults extends Component {
     return (
       <div className="container my-5">
         <div className="card border-light">
-          <div className="card-header">{name} asked:</div>
+          <div className="card-header"><h2>Results</h2></div>
           <div className="card-body">
             <div className="card-body-left">
               <img src={avatar} alt={`Avatar of ${name}`} />
             </div>
             <div className="card-body-right">
-              <h4>Results:</h4>
+              <p>{name} asked:</p>
               <div className=
                 {userAnswer === 'optionOne'
                   ? "card text-white bg-success mb-3"

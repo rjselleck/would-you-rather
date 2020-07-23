@@ -1,12 +1,12 @@
 import { getInitialData } from '../utils/api.js'
 import { receiveUsers, saveUserAnswer } from '../actions/users'
-import { receiveQuestions, saveQuestionAnswer } from '../actions/questions'
+import { receiveQuestions, saveQuestionAnswer, saveQuestion } from '../actions/questions'
 import { setAuthedUser } from '../actions/authedUser'
 import { showLoading, hideLoading } from 'react-redux-loading'
-import { _saveQuestionAnswer } from '../utils/_DATA'
+import { _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
 
-// const AUTHED_ID = 'sarahedo'
-const AUTHED_ID = ''
+const AUTHED_ID = 'sarahedo'
+// const AUTHED_ID = ''
 
 
 // Action Creators
@@ -30,12 +30,29 @@ export function handleAnsweredQuestion(qid, answer, authedUser) {
       authedUser,
       qid,
       answer,
-    };
+    }
     _saveQuestionAnswer(info)
       .then(() => {
         dispatch(saveUserAnswer(qid, answer, authedUser))
         dispatch(saveQuestionAnswer(qid, answer, authedUser))
 
+      })
+  }
+}
+
+export function handleAddQuestion(optionOne, optionTwo, authedUser) {
+  return (dispatch) => {
+    const info = {
+      authedUser,
+      optionOne,
+      optionTwo,
+    }
+    // console.log('ONE: ', optionOne)
+    // console.log('TWO: ', optionTwo)
+    // console.log('USER: ', authedUser)
+    _saveQuestion(info)
+      .then(() => {
+        dispatch(saveQuestion(optionOne, optionTwo, authedUser))
       })
   }
 }
