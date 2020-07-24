@@ -22,12 +22,11 @@ export default function questions(state = {}, action) {
       }
 
     case ADD_QUESTION:
-      const { optionOne, optionTwo } = action
-      console.log('ONE: ', optionOne)
-      console.log('TWO: ', optionTwo)
-      console.log('USER: ', authedUser)
+      const { question } = action
+      console.log('RED Q: ', question)
       return {
-
+        ...state,
+        [question.id]: question
       }
 
     default:

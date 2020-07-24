@@ -152,6 +152,10 @@ export function _saveQuestion(question) {
     const authedUser = question.author;
     const formattedQuestion = formatQuestion(question)
 
+    console.log('AU: ', authedUser)
+    console.log('Question: ', question)
+    console.log('FQ: ', formattedQuestion)
+
     setTimeout(() => {
       questions = {
         ...questions,

@@ -1,9 +1,10 @@
 import { getInitialData } from '../utils/api.js'
+import { _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
 import { receiveUsers, saveUserAnswer } from '../actions/users'
 import { receiveQuestions, saveQuestionAnswer, saveQuestion } from '../actions/questions'
 import { setAuthedUser } from '../actions/authedUser'
 import { showLoading, hideLoading } from 'react-redux-loading'
-import { _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
+
 
 const AUTHED_ID = 'sarahedo'
 // const AUTHED_ID = ''
@@ -42,17 +43,14 @@ export function handleAnsweredQuestion(qid, answer, authedUser) {
 
 export function handleAddQuestion(optionOne, optionTwo, authedUser) {
   return (dispatch) => {
-    const info = {
-      authedUser,
-      optionOne,
-      optionTwo,
+    const question = {
+      author: authedUser,
+      optionOneText: optionOne,
+      optionTwoText: optionTwo,
     }
-    // console.log('ONE: ', optionOne)
-    // console.log('TWO: ', optionTwo)
-    // console.log('USER: ', authedUser)
-    _saveQuestion(info)
-      .then(() => {
-        dispatch(saveQuestion(optionOne, optionTwo, authedUser))
+    _saveQuestion(question)
+      .then((formattedQuestion) => {
+        dispatch(saveQuestion(formattedQuestion))
       })
   }
 }

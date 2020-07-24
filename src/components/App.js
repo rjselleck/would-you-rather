@@ -33,7 +33,7 @@ class App extends Component {
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/questions/:id' component={QuestionSwitch} />
                   <Route path='/new' exact component={QuestionNew} />
-                  <Route path='/leaderboard' exact component={LeaderBoard} />
+                  <Route path='/leader-board' exact component={LeaderBoard} />
                 </Fragment>
                 :
                 <Login />

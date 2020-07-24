@@ -18,14 +18,9 @@ export function saveQuestionAnswer(qid, answer, authedUser) {
   }
 }
 
-export function saveQuestion(optionOne, optionTwo, authedUser) {
-  // console.log('ONE: ', optionOne)
-  // console.log('TWO: ', optionTwo)
-  // console.log('USER: ', authedUser)
+export function saveQuestion(question) {
   return {
     type: ADD_QUESTION,
-    optionOne,
-    optionTwo,
-    authedUser,
+    question,
   }
 }

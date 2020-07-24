@@ -27,7 +27,7 @@ class QuestionNew extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const { optionOne, optionTwo, authedUser } = this.state
+    const { optionOne, optionTwo } = this.state
 
     if (optionOne === '' || optionTwo === '') {
       this.setState(() => ({

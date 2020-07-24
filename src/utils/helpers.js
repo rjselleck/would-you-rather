@@ -21,6 +21,7 @@ export function formatQuestion(question, user) {
   }
 }
 
+
 export function formatPercentage(x) {
   return Number.parseFloat(x).toFixed(2);
 }
