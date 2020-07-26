@@ -14,8 +14,12 @@ code {
 .btn{
   border-radius: 0;
 }
-.navbar-text-right{
-  display: block;
+.navbar-text span{
+  color: #ffffff;
+  font-weight: 600;
+}
+.navbar .nav-link{
+  font-size: 14px;
 }
 .container{
   max-width: 600px;

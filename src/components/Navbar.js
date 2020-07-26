@@ -34,14 +34,14 @@ class Navbar extends Component {
                 Leader Board
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink to='/logout' className="nav-link">
+                Logout
+              </NavLink>
+            </li>
           </ul>
           <div className="navbar-text">
-            <span className="navbar-text-right">
-              Hello {authedUser}
-            </span>
-            <span className="navbar-text-right pl-lg-3 pl-0 mt-3 mt-lg-0">
-              Logout
-            </span>
+            <span>Hello {authedUser}</span>
           </div>
         </div>
       </nav>
