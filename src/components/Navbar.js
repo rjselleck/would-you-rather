@@ -30,7 +30,7 @@ class Navbar extends Component {
             </li>
             <li className="nav-item">
               {/* <span className="nav-link">Leader Board</span> */}
-              <NavLink to='/leader-board' exact activeClassName='active' className="nav-link">
+              <NavLink to='/leaderboard' exact activeClassName='active' className="nav-link">
                 Leader Board
               </NavLink>
             </li>

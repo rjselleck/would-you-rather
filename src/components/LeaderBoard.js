@@ -12,8 +12,8 @@ class LeaderBoard extends Component {
           <h2>Leader Board</h2>
         </div>
         {userData.map((user) => (
-          <Fragment>
-            <div key={user.id} className="card-container">
+          <Fragment key={user.id}>
+            <div className="card-container">
               <div className="card border-light">
                 <div className="card-header">
                   <div className="card-body">
@@ -28,19 +28,15 @@ class LeaderBoard extends Component {
                       </div>
                       <h4>{user.name}</h4>
                       <p>Answered Questions: {user.answerCount}
-                        <br />reated Questions: {user.questionCount} </p>
+                        <br />Created Questions: {user.questionCount} </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </Fragment>
-
         ))}
-
       </div>
-
-
     )
   }
 }

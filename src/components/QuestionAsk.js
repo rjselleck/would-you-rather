@@ -61,6 +61,7 @@ class QuestionAsk extends Component {
                 <img src={avatar} alt={`Avatar of ${name}`} />
               </div>
               <div className="card-body-right">
+                <h4 className="mb-3">Would you rather</h4>
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-check mb-3">
                     <input className="form-check-input" type="radio" name="questions" id="optionOne" value="optionOne" onChange={this.handleOptionSelected} />
@@ -74,7 +75,7 @@ class QuestionAsk extends Component {
                       {optionTwo}
                     </label>
                   </div>
-                  <button type="submit" class="btn btn-outline-primary">Submit</button>
+                  <button type="submit" className="btn btn-outline-primary">Submit</button>
                 </form>
               </div>
             </div>

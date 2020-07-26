@@ -31,7 +31,7 @@ class QuestionNew extends Component {
 
     if (optionOne === '' || optionTwo === '') {
       this.setState(() => ({
-        errorMsg: 'Please enter two questions!'
+        errorMsg: 'Please enter two options!'
       }))
     } else {
       const { dispatch, authedUser } = this.props
@@ -57,21 +57,20 @@ class QuestionNew extends Component {
     return (
       <div className="container my-5">
         <div className="card border-light">
-          <div className="card-header"><h3>Create New Question</h3></div>
+          <div className="card-header"><h3>Would You Rather</h3></div>
           <div className="card-body">
-            <h4 className="mb-3">Would you rather...</h4>
             {errorMsg
               ? <p className="text-danger">{errorMsg}</p>
               : null
             }
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
-                <label>Question One</label>
-                <input type="text" className="form-control" id="questionOne" placeholder="Enter Qustion One" value={optionOne} onChange={this.handleQuestionOneChange} />
+                <label>Option One</label>
+                <input type="text" className="form-control" id="questionOne" placeholder="Enter Option One" value={optionOne} onChange={this.handleQuestionOneChange} />
               </div>
               <div className="form-group">
-                <label>Question Two</label>
-                <input type="text" className="form-control" id="questionTwo" placeholder="Enter Qustion Two" value={optionTwo} onChange={this.handleQuestionTwoChange} />
+                <label>Option Two</label>
+                <input type="text" className="form-control" id="questionTwo" placeholder="Enter Option Two" value={optionTwo} onChange={this.handleQuestionTwoChange} />
               </div>
               <button type="submit" className="btn btn-outline-primary mt-3">Submit</button>
             </form>
