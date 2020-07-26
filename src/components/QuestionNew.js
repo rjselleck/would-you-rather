@@ -73,7 +73,7 @@ class QuestionNew extends Component {
                 <label>Question Two</label>
                 <input type="text" className="form-control" id="questionTwo" placeholder="Enter Qustion Two" value={optionTwo} onChange={this.handleQuestionTwoChange} />
               </div>
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <button type="submit" className="btn btn-outline-primary mt-3">Submit</button>
             </form>
           </div>
         </div>
@@ -83,8 +83,6 @@ class QuestionNew extends Component {
 }
 // mapStateToProps({state},{props})
 function mapStateToProps({ authedUser }) {
-
-
   return {
     authedUser,
   }

@@ -23,12 +23,12 @@ class QuestionResults extends Component {
               <p>{name} asked:</p>
               <div className=
                 {userAnswer === 'optionOne'
-                  ? "card text-white bg-success mb-3"
-                  : "card border-light text-white bg-dark mb-3"
+                  ? "card border-success mb-3"
+                  : "card border-secondary mb-3"
                 }>
                 <div className="card-body">
                   {userAnswer === 'optionOne'
-                    ? <span className="badge badge-info float-right">Your Pick</span>
+                    ? <span className="badge badge-success float-right py-2 px-2">Your Pick</span>
                     : ''}
                   <p className="card-text">{optionOne}</p>
                   <div className="progress mb-2">
@@ -41,12 +41,12 @@ class QuestionResults extends Component {
               </div>
               <div className=
                 {userAnswer === 'optionOne'
-                  ? "card border-light text-white bg-dark"
-                  : "card text-white bg-success"
+                  ? "card border-secondary"
+                  : "card border-success"
                 }>
                 <div className="card-body">
                   {userAnswer === 'optionTwo'
-                    ? <span className="badge badge-info float-right">Your Pick</span>
+                    ? <span className="badge badge-success float-right py-2 px-2">Your Pick</span>
                     : ''}
                   <p className="card-text">{optionTwo}</p>
                   <div className="progress mb-2">

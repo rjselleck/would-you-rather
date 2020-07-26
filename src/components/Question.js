@@ -21,7 +21,7 @@ class Question extends Component {
               <h4>Would you rather</h4>
               <p>{optionOne}...</p>
               <Link to={`/questions/${id}`}>
-                <button>View Poll</button>
+                <button type="button" className="btn btn-outline-primary">View Poll</button>
               </Link>
             </div>
           </div>

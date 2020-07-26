@@ -11,16 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.btn{
+  border-radius: 0;
+}
 .navbar-text-right{
   display: block;
 }
-/* form{
-  width: 300px;
-  margin: 0 auto;
-} */
 .container{
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   border: 1px solid #adb5bd;
   padding: 0;
@@ -28,32 +26,35 @@ code {
 .card-container{
   padding: 20px;
 }
-/* .button-container{
-  display: flex; 
-  flex-direction: row;  
-} */
+
 .button-container button{
   width: 50%;
   height: 50px;
 }
-/* .button-selected{
-  background-color: aqua;
-} */
+
 .card-body-left{
-  /* outline: solid red 1px; */
   width:25%;
   float:left;
-  
 }
 .card-body-left img{
   width: 100%;
 }
 .card-body-right{
-  /* outline: solid green 1px; */
   width:65%;
   float:right;
 }
-
+.score-box{
+  /* outline: solid red 1px; */
+  float: right;
+  text-align: center;
+  padding: 8px;
+  color: #ffffff;
+  background-color: #325D88;
+}
+.score-box span{
+  font-weight: 800;
+  font-size: 2rem;
+}
 
 @media only screen and (min-width: 992px) {
   .navbar-text-right{

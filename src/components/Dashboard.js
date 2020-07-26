@@ -22,11 +22,21 @@ class Dashboard extends Component {
     const { answeredQuestions, unansweredQuestions } = this.props;
     const { toggle } = this.state
 
+    let btnAnsweredClass, btnUnansweredClass = ''
+
+    if (toggle === 'unanswered') {
+      btnAnsweredClass = 'btn btn-primary disabled'
+      btnUnansweredClass = 'btn btn-primary '
+    } else {
+      btnAnsweredClass = 'btn btn-primary '
+      btnUnansweredClass = 'btn btn-primary disabled'
+    }
+
     return (
       <div className="container my-5">
         <div className="button-container">
-          <button value="unanswered" onClick={this.handleToggle} >Unanswered</button>
-          <button value="answered" onClick={this.handleToggle}>Answered</button>
+          <button className={btnUnansweredClass} value="unanswered" onClick={this.handleToggle} >Unanswered</button>
+          <button className={btnAnsweredClass} value="answered" onClick={this.handleToggle}>Answered</button>
         </div>
         <div>
           {toggle === 'answered'

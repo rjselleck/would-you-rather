@@ -74,7 +74,7 @@ class QuestionAsk extends Component {
                       {optionTwo}
                     </label>
                   </div>
-                  <button type="submit" className="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-outline-primary">Submit</button>
                 </form>
               </div>
             </div>
