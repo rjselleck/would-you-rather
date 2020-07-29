@@ -2,12 +2,12 @@ import { getInitialData } from '../utils/api.js'
 import { _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
 import { receiveUsers, saveUserAnswer } from '../actions/users'
 import { receiveQuestions, saveQuestionAnswer, saveQuestion } from '../actions/questions'
-import { setAuthedUser } from '../actions/authedUser'
+// import { setAuthedUser } from '../actions/authedUser'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 
-const AUTHED_ID = 'sarahedo'
-// const AUTHED_ID = ''
+// const AUTHED_ID = 'sarahedo'
+// const AUTHED_ID = null
 
 
 // Action Creators
@@ -18,7 +18,7 @@ export function handleInitialData() {
       .then(({ users, questions }) => {
         dispatch(receiveUsers(users))
         dispatch(receiveQuestions(questions))
-        dispatch(setAuthedUser(AUTHED_ID))
+        // dispatch(setAuthedUser(AUTHED_ID))
         dispatch(hideLoading())
       })
   }

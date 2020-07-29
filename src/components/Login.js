@@ -33,14 +33,16 @@ class Login extends Component {
       this.setState(() => ({
         errorMsg: 'Please select an actual user!'
       }))
+    } else {
+      dispatch(setAuthedUser(selectedUser))
+
+      this.setState(() => ({
+        selectedUser: '',
+        toDashboard: true,
+      }))
     }
 
-    dispatch(setAuthedUser(selectedUser))
 
-    this.setState(() => ({
-      selectedUser: '',
-      toDashboard: true,
-    }))
   }
 
   render() {
