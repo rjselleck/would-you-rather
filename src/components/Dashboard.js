@@ -58,7 +58,6 @@ class Dashboard extends Component {
 }
 
 
-
 function mapStateToProps({ questions, authedUser, users }) {
   const answeredIds = Object.keys(users[authedUser].answers)
 

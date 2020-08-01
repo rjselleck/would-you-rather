@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 class Question extends Component {
   render() {
     const { question, id } = this.props
-
     const { name, avatar, optionOne } = question
 
     return (
@@ -30,7 +29,7 @@ class Question extends Component {
     )
   }
 }
-// mapStateToProps({state},{props})
+
 function mapStateToProps({ authedUser, users, questions }, { id }) {
   const question = questions[id]
 

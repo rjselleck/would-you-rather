@@ -13,23 +13,19 @@ class Navbar extends Component {
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              {/* <span className="nav-link">Home</span> */}
               <NavLink to='/' exact activeClassName='active' className="nav-link">
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              {/* <span className="nav-link">New Question</span> */}
-              <NavLink to='/new' exact activeClassName='active' className="nav-link">
+              <NavLink to='/add' exact activeClassName='active' className="nav-link">
                 New Question
               </NavLink>
             </li>
             <li className="nav-item">
-              {/* <span className="nav-link">Leader Board</span> */}
               <NavLink to='/leaderboard' exact activeClassName='active' className="nav-link">
                 Leader Board
               </NavLink>
@@ -46,8 +42,8 @@ class Navbar extends Component {
         </div>
       </nav>
     )
-  };
-};
+  }
+}
 
 
 function mapStateToProps({ authedUser }) {

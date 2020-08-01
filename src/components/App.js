@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
-// import LoadingBar from 'react-redux-loading'
 // import PropTypes from 'prop-types'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { handleInitialData } from '../actions/shared'

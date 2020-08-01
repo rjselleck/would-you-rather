@@ -41,8 +41,6 @@ class Login extends Component {
         toDashboard: true,
       }))
     }
-
-
   }
 
   render() {

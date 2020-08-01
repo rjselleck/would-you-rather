@@ -5,7 +5,6 @@ import { formatQuestion, formatPercentage } from '../utils/helpers'
 
 class QuestionResults extends Component {
 
-
   render() {
 
     const { question, total, voteOne, voteTwo, percentageOne, percentageTwo, userAnswer } = this.props
