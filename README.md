@@ -13,7 +13,11 @@ To get started developing right away:
 
 ## Sources and Inspiration
 https://redux.js.org/
+
 https://www.smashingmagazine.com/2016/06/an-introduction-to-redux/
+
 https://github.com/QuadDamn
+
 https://github.com/matthieuchoplin
+
 Traversy Media - https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA
