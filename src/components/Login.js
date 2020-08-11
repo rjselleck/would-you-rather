@@ -44,7 +44,7 @@ class Login extends Component {
   }
 
   render() {
-    const { userIds } = this.props
+    const { users } = this.props
     const { errorMsg, toDashboard } = this.state
 
     if (toDashboard === true) {
@@ -64,9 +64,12 @@ class Login extends Component {
           <div className="form-group">
             <select id="user-select" className="custom-select" onChange={(e) => this.handleChangeSelect(e)}>
               <option value="">Please Choose</option>
-              {userIds.map((id) =>
-                <option key={id} value={id}>{id}</option>
-              )}
+              {
+                Object.keys(users).map(user =>
+                  <option key={user} value={user}>
+                    {users[user].name}
+                  </option>)
+              }
             </select>
             <div className="my-3">
               <button id="login-button" type="submit" className="btn btn-primary btn-block">Login</button>
@@ -80,7 +83,7 @@ class Login extends Component {
 
 function mapStateToProps({ users }) {
   return {
-    userIds: Object.keys(users)
+    users
   }
 }
 
