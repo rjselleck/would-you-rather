@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 class Navbar extends Component {
   render() {
 
-    const { authedUser } = this.props
+    const { userName } = this.props
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,7 +37,7 @@ class Navbar extends Component {
             </li>
           </ul>
           <div className="navbar-text">
-            <span>Hello {authedUser}</span>
+            <span>Hello {userName}</span>
           </div>
         </div>
       </nav>
@@ -46,11 +46,12 @@ class Navbar extends Component {
 }
 
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps({ authedUser, users }) {
+  const userName = users[authedUser].name
+
   return {
-    authedUser
+    userName
   }
 }
-
 
 export default connect(mapStateToProps)(Navbar);
