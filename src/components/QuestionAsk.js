@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
 import { handleAnsweredQuestion } from '../actions/shared'
 import { Redirect } from 'react-router-dom'
+import PageNotFound from "./PageNotFound";
 
 class QuestionAsk extends Component {
   state = {
@@ -42,9 +43,13 @@ class QuestionAsk extends Component {
 
   render() {
 
-    const { question, qid } = this.props
+    const { question, qid, to404 } = this.props
     const { name, avatar, optionOne, optionTwo } = question
     const { errorMsg, toResults } = this.state
+
+    if (to404 === true) {
+      return <PageNotFound />
+    }
 
     if (toResults === true) {
       return <Redirect to={`/questions/${qid}`} />
@@ -88,11 +93,19 @@ class QuestionAsk extends Component {
 
 function mapStateToProps({ authedUser, users, questions }, { id }) {
   const question = questions[id]
+  let to404 = true
+  let validQuestion = ''
+
+  if (question !== undefined) {
+    to404 = false
+    validQuestion = formatQuestion(question, users[question.author])
+  }
 
   return {
-    question: formatQuestion(question, users[question.author]),
+    question: validQuestion,
     qid: id,
     authedUser,
+    to404,
   }
 }
 
