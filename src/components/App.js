@@ -30,7 +30,10 @@ class App extends Component {
                 <Routes />
               </Fragment>
               :
-              <Login />
+              <Fragment>
+                <Navbar />
+                <Login />
+              </Fragment>
             }
           </div>
         </Fragment>
