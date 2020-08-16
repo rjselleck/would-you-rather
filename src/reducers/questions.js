@@ -23,7 +23,7 @@ export default function questions(state = {}, action) {
 
     case ADD_QUESTION:
       const { question } = action
-      console.log('RED Q: ', question)
+
       return {
         ...state,
         [question.id]: question

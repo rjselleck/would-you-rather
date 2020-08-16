@@ -1,8 +1,7 @@
 import { getInitialData } from '../utils/api.js'
 import { _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
-import { receiveUsers, saveUserAnswer } from '../actions/users'
+import { receiveUsers, saveUserAnswer, saveUserQuestion } from '../actions/users'
 import { receiveQuestions, saveQuestionAnswer, saveQuestion } from '../actions/questions'
-// import { setAuthedUser } from '../actions/authedUser'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 
@@ -18,7 +17,6 @@ export function handleInitialData() {
       .then(({ users, questions }) => {
         dispatch(receiveUsers(users))
         dispatch(receiveQuestions(questions))
-        // dispatch(setAuthedUser(AUTHED_ID))
         dispatch(hideLoading())
       })
   }
@@ -51,6 +49,7 @@ export function handleAddQuestion(optionOne, optionTwo, authedUser) {
     _saveQuestion(question)
       .then((formattedQuestion) => {
         dispatch(saveQuestion(formattedQuestion))
+        dispatch(saveUserQuestion(formattedQuestion.id, formattedQuestion.author))
       })
   }
 }
